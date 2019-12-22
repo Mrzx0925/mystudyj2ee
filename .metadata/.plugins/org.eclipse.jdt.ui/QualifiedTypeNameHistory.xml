@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.entity.Users"/>
+    <fullyQualifiedTypeName name="com.utils.Tools"/>
+    <fullyQualifiedTypeName name="entity.Users"/>
+    <fullyQualifiedTypeName name="service.MyService"/>
+    <fullyQualifiedTypeName name="utils.Tools"/>
+    <fullyQualifiedTypeName name="org.springframework.orm.hibernate3.HibernateTemplate"/>
+    <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
+    <fullyQualifiedTypeName name="com.dao.IndexDao"/>
+    <fullyQualifiedTypeName name="com.entity.Message"/>
+    <fullyQualifiedTypeName name="antlr.collections.List"/>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.entity.CompanyInfo"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+    <fullyQualifiedTypeName name="net.sf.json.JSONObject"/>
+    <fullyQualifiedTypeName name="com.entity.Article"/>
+    <fullyQualifiedTypeName name="org.springframework.orm.hibernate5.HibernateTemplate"/>
+    <fullyQualifiedTypeName name="com.entity.Notice"/>
+    <fullyQualifiedTypeName name="com.dao.NoticeDao"/>
+    <fullyQualifiedTypeName name="net.sf.json.JSONArray"/>
+    <fullyQualifiedTypeName name="net.sf.json.processors.JsonValueProcessor"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="net.sf.json.JsonConfig"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.utils.DateJsonValueProcessor"/>
+    <fullyQualifiedTypeName name="org.springframework.orm.hibernate5.support.HibernateDaoSupport"/>
+</qualifiedTypeNameHistroy>

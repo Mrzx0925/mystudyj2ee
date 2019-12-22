@@ -1,0 +1,19 @@
+package com.service;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.entity.Users;
+
+public class MyService extends HibernateTemplate{
+	Users user;
+
+	public Users getUser() {
+		return user;
+	}
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+	
+	
+}

@@ -1,0 +1,19 @@
+$(function() {
+	$('#myCarousel').carousel('cycle');
+});
+
+$(document).ready(function() {
+
+	$.ajax({
+		type : 'get',
+		url : "index_companyInfo",
+		cache : false,
+		success : function(data) {
+			alert(data.cdesc);
+		},
+		error : function() {
+			alert("请求失败")
+		}
+	})
+
+});

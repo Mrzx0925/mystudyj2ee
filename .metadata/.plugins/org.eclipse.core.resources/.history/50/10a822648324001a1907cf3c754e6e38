@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+   http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+   http://www.springframework.org/schema/tx 
+   http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+   http://www.springframework.org/schema/context      
+   http://www.springframework.org/schema/context/spring-context-4.3.xsd"
+   >
+ 
+
+	<bean id="lg" class="com.zx.LgRe">
+		<property name="myservice" ref="MyService"></property>
+		<property name="user" ref="user"></property>
+		<property name="tools" ref="Tools"></property>
+	</bean>
+	<bean id="Tools" class="com.utils.Tools" >
+		
+	</bean>
+	
+	<bean id="MyService" class="com.service.MyService" >
+			<property name="sessionFactory" ref="sf"></property>
+			<property name="user" ref="user"></property>
+	</bean>
+	<bean id="user" class="com.entity.Users">
+		
+	</bean>
+	<bean name="sf"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="ds" />
+		<property name="mappingResources">
+			<list>
+				<value>com/entity/Users.hbm.xml</value>
+			</list>
+		</property>
+ 
+	    <property name="schemaUpdate">  
+	        <value>true</value>  
+	    </property>  
+	    		
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=org.hibernate.dialect.MySQLDialect
+				hibernate.show_sql=true
+				hbm2ddl.auto=update
+   			</value>
+		</property>
+	</bean>    
+        
+        
+    <bean name="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/ssh?serverTimezone=UTC&characterEncoding=utf-8" />
+		<property name="username" value="root" />
+		<property name="password" value="aa909090" />
+	</bean>
+
+
+	
+</beans>

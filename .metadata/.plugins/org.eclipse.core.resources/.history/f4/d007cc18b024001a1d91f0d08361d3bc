@@ -1,0 +1,9 @@
+
+$(function(){
+	$('#myCarousel').carousel('cycle');
+});
+
+
+$(document).ready(function(){  
+    alert("第一种方法。");   
+});  

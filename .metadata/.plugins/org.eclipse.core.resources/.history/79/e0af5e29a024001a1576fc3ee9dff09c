@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hibernate-configuration>
+	<session-factory>
+	
+		<property name="show_sql">true</property>
+		<mapping resource="com/entity/Article.hbm.xml" />
+		<mapping resource="com/entity/CompanyInfo.hbm.xml" />
+		<mapping resource="com/entity/Message.hbm.xml" />
+		<mapping resource="com/entity/Notice.hbm.xml" />
+		<mapping resource="com/entity/ProductInfo.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

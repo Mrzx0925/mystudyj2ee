@@ -1,0 +1,25 @@
+package com.action;
+
+import com.entity.Notice;
+
+public class NoticeAction {
+
+	Notice notice;
+
+	
+	
+	
+	
+	public Notice getNotice() {
+		return notice;
+	}
+
+	public void setNotice(Notice notice) {
+		this.notice = notice;
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,49 @@
+package com.action;
+
+import com.dao.IndexDao;
+import com.entity.CompanyInfo;
+import com.entity.Message;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class Index extends ActionSupport{
+	IndexDao indexDao;
+	CompanyInfo companyInfo;
+	
+	
+	public void companyInfo() {
+		 indexDao
+	}
+	
+	
+	
+	
+	 public IndexDao getIndexDao() {
+		return indexDao;
+	}
+
+
+
+
+	public void setIndexDao(IndexDao indexDao) {
+		this.indexDao = indexDao;
+	}
+
+
+
+
+	public CompanyInfo getCompanyInfo() {
+		return companyInfo;
+	}
+
+
+
+
+	public void setCompanyInfo(CompanyInfo companyInfo) {
+		this.companyInfo = companyInfo;
+	}
+
+
+
+
+
+}

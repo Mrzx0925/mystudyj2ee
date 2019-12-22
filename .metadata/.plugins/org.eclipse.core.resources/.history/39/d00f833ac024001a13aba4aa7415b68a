@@ -1,0 +1,8 @@
+package com.dao;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+
+public class NoticeDao extends HibernateDaoSupport {
+
+}

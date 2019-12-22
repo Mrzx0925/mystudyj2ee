@@ -1,0 +1,20 @@
+$(function() {
+	$('#myCarousel').carousel('cycle');
+});
+
+$(document).ready(function() {
+
+	$.ajax({
+		type : 'post',
+		url : "index_companyInfo",
+		cache : false,
+		data : data, // 重点必须为一个变量如：data
+		success : function(data) {
+			alert(data.cdesc);
+		},
+		error : function() {
+			alert("请求失败")
+		}
+	})
+
+});

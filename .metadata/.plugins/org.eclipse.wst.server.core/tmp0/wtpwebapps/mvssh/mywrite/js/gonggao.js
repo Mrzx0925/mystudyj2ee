@@ -1,0 +1,38 @@
+$(document).ready(function() {
+
+	$.ajax({
+		type : 'get',
+		url : "notice_info",
+		cache : false,
+		type:"json",
+		success : function(data) {
+			
+			for (var i in data) {
+			var thedata = $("#table");
+			var trData = "<tbody><td>"+ data[i].ntitle +"</td><td>"+ getDate(data[i].ntime)+"</td><td><button  class=\"btn btn-info btn-xs\" data-toggle=\"modal\" data-target=\"#findModal\"  onclick=\"getNotice("+data[i].nid+")\">查看</button></td></tbody>";
+				thedata.append(trData);
+			}
+			
+		},
+		error : function() {
+			alert("请求失败")
+		}
+	})
+});
+
+
+function getNotice(id) {
+	alert("id")
+}
+
+function getDate(time) {
+	var  flag = ""+time.day;
+	if(flag.length == 1){
+		var ss = time.year+"-"+time.month+"-0"+time.day;
+	}else{
+		var ss = time.year+"-"+time.month+"-"+time.day;
+	}
+	
+	
+	return "20"+ss.substr(1) ;
+}

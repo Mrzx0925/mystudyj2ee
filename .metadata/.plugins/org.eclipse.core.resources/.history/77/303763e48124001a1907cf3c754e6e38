@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+   http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+   http://www.springframework.org/schema/tx 
+   http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+   http://www.springframework.org/schema/context      
+   http://www.springframework.org/schema/context/spring-context-4.3.xsd"
+   >
+ 
+
+	<bean id="lg" class="com.zx.LgRe">
+		<property name="myservice" ref="MyService"></property>
+		<property name="user" ref="user"></property>
+		<property name="tools" ref="Tools"></property>
+	</bean>
+	<bean id="Tools" class="com.utils.Tools" >
+		
+	</bean>
+	
+	<bean id="MyService" class="com.service.MyService" >
+			<property name="sessionFactory" ref="sf"></property>
+			<property name="user" ref="user"></property>
+	</bean>
+	<bean id="user" class="com.entity.Users">
+		
+	</bean>
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>  
+    <property name="url" value="jdbc:mysql://localhost:3306/s2sh?useUnicode=true&amp;characterEncoding=UTF-8"></property>  
+    <property name="username" value="root"></property>  
+    <property name="password" value=""></property>  
+    <!-- 最大活动连接数 -->  
+    <property name="maxActive" value="100"></property>  
+    <!-- 最大可空闲连接数 -->  
+    <property name="maxIdle" value="30"></property>  
+    <!-- 最大可等待连接数 -->  
+    <property name="maxWait" value="500"></property>  
+    <!-- 默认的提交方式（如果不需要事务可以设置成true，在实际应用中一般设置为false,默认为false） --> 
+    <property name="defaultAutoCommit" value="true"></property>  
+</bean>  
+<!-- 这里直接使用spring对hibernate3支持的sessionFactory -->  
+<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
+    <property name="dataSource" ref="dataSource"></property>  
+    <!-- hibernate方言等相关配置 -->  
+    <property name="hibernateProperties">  
+        <props>  
+            <prop key="connection.useUnicode">true</prop>  
+            <prop key="connection.characterEncoding">utf-8</prop>  
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>  
+            <prop key="hibernate.show_sql">true</prop>  
+        </props>  
+    </property>  
+    <!-- hbm.xml的映射文件 -->  
+    <property name="mappingResources">  
+        <list>  
+            <value>test/s2sh/bean/Person.hbm.xml</value>  
+        </list>  
+    </property>  
+</bean>  
+ 
+
+
+	
+</beans>

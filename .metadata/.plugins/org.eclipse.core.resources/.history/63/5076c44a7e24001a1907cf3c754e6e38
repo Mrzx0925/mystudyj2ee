@@ -1,0 +1,82 @@
+package com.zx;
+
+import java.util.List;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.entity.Users;
+import com.opensymphony.xwork2.ActionSupport;
+import com.service.MyService;
+import com.utils.Tools;
+
+public class LgRe extends ActionSupport{
+	
+	static ServletActionContext sa = null;
+	
+	Users user;
+	MyService myservice;
+	Tools tools;
+	public Tools getTools() {
+		return tools;
+	}
+
+	public void setTools(Tools tools) {
+		this.tools = tools;
+	}
+	String username;
+	String password;
+	public MyService getMyservice() {
+		return myservice;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setMyservice(MyService myservice) {
+		this.myservice = myservice;
+	}
+
+	public Users getUser() {
+		return user;
+	}
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+	
+	public void login() {
+		user.setUsername(username);
+		List<Users> list = myservice.findByExample(user);
+		myservice.getSessionFactory().close();
+		String pass = list.get(0).getPassword();
+		if(pass.equals(password)) {
+			tools.write(sa, "登录成功");
+		}else {
+			tools.write(sa, "账号或者密码错误");
+		}
+		
+	}
+	public void register() {
+		System.out.println(username);
+		user.setPassword(password);
+		user.setUsername(username);
+		myservice.save(user);
+		myservice.getSessionFactory().close();
+		tools.write(sa,"注册成功");
+		
+	}
+	
+}
